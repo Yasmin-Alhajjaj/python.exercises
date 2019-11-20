@@ -106,6 +106,7 @@ else:
  """ 
     
 #Q9
+ #1
 '''
 for s in range(3):
     for d in range(2-s):
@@ -124,6 +125,7 @@ for s in range(2):
         print("*",end="")      
     print()
 '''
+#2
 '''
 for s in range(15):
     for d in range(14-s):
@@ -142,6 +144,7 @@ for s in range(14):
         print("*",end="")      
     print()
 '''
+#3
 '''
 for s in range(3):
     y=0
@@ -166,6 +169,8 @@ for s in range(2):
         print(y,end="")      
     print()
  '''
+ #4
+''' 
 for s in range(9):
     y=0
     for d in range(8-s):
@@ -192,34 +197,32 @@ for s in range(8):
         if y<1:break
         print(y,end="")      
     print()
-
+'''
  
- 
+ #5 the best sol
 for s in range(9):
-    y=0
+    y=1
     for d in range(8-s):
         print(" ",end=" ")
     for d in range(s+1):
-        y=y+1
-        if y>9:break
         print(y,end=" ")
+        y=y+1
+    y=y-2
     for d in range(s):
+        print(y,end=" ")
         y=y-1
-        if y<1:break
-        print(y,end=" ")      
     print()
 for s in range(8):
-    y=0
+    y=1
     for d in range(s+1):
         print(" ",end=" ")
     for d in range(8-s):
-        y=y+1
-        if y>9:break
         print(y,end=" ")
+        y=y+1
+    y=y-2
     for d in range(8-(s+1)):
+        print(y,end=" ") 
         y=y-1
-        if y<1:break
-        print(y,end=" ")      
     print()
  
 #Q10
