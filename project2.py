@@ -225,42 +225,44 @@ def delete_employee():
     Label(c, text="Delete Employee").grid()
     valudel=IntVar()
     Number = Label(c, text = "Enter Number").grid(row = 2,column =3)
-    de = Entry(c, textvariable= value1).grid(row = 5, column =3)
+    
+    
+    def destro():
+     for e,emp in enumerate(empl_list):
+        if valudel.get()==emp.Employee_Num:
+            empl_list.remove(emp)
+            messagebox.showinfo("messagebox", "the employee  Number is delete ")
+        #messagebox.showinfo("messagebox", "the employee with this Number doesn't exist")
+    de = Entry(c, textvariable= valudel).grid(row = 5, column =3)
+    delete = Button(c, text="delete", command= destro).grid(row = 7, column = 1)
+
     
     
     
-    
-    
-'''
+stu_list=[]   
 def add_student():
     c = Toplevel(root)
     c.title("Add New Student")
     c.geometry("500x500+510+230")
-    Label(c, text="Add New Student").grid()
-     value1 = IntVar()
+    value1 = IntVar()
     value2 = StringVar()
     value3 = StringVar()
-    value4 = IntVar()
+    value4 = StringVar()
     value5 = IntVar()
-    value6 = StringVar()
     
-    c = Toplevel(root)
-    c.title("Add New Employee")
-    c.geometry("500x500+510+230")
-    #Label(c, text="Add New Employee").grid()
     Number = Label(c, text = "Number").grid(row = 0, sticky=E)
-    e1 = Entry(c, textvariable= value1).grid(row = 0, column =1)
+    ea1 = Entry(c, textvariable= value1).grid(row = 0, column =1)
     Name= Label(c, text ="Name").grid(row = 1, sticky=E)
-    e2 = Entry(c, textvariable= value2).grid(row = 1, column =1)
-    Subject = Label(c, text = "Subject").grid(row=2, sticky=E)
-    e3 = Entry(c, textvariable= value3).grid(row = 2, column =1)
-    Markst= Label(c, text ="salary").grid(row = 3, sticky=E)
-    e4 = Entry(c, textvariable= value4).grid(row = 3, column =1)
-    loans= Label(c, text ="loans").grid(row = 4, sticky=E)
-    e5 = Entry(c, textvariable= value5).grid(row = 4, column =1)
-    address= Label(c, text ="address").grid(row = 5, sticky=E)
-    e6 = Entry(c, textvariable= value6).grid(row = 5, column =1)
-    def add():
+    ea2 = Entry(c, textvariable= value2).grid(row = 1, column =1)
+    address= Label(c, text ="address").grid(row = 2, sticky=E)
+    ea3 = Entry(c, textvariable= value3).grid(row = 2, column =1)
+    Subject = Label(c, text = "Subject").grid(row=3, sticky=E)
+    ea4 = Entry(c, textvariable= value4).grid(row = 3, column =1)
+    Marks= Label(c, text ="Marks").grid(row = 4, sticky=E)
+    ea5 = Entry(c, textvariable= value5).grid(row = 4, column =1)
+
+    
+    def addS():
         #print()
         # lista.append(value1.get())
         #lista.append(value2.get())
@@ -269,24 +271,46 @@ def add_student():
         #lista.append(value5.get())
         # lista.append(value6.get())
         # print(lista) 
-        E1=Employee(value1.get(),value2.get(),value6.get(),value4.get(),value3.get(),[1,5,9])
+        S1=Student(value1.get(),value2.get(),value3.get(),value4.get(),{"English":80,"Arabic":90,"Art":95,"Management":75})
         #print(Employee1.printinfo())
-        empl_list.append(E1)
+        stu_list.append(S1)
 
 
-    save = Button(c, text="save", command= add).grid(row = 7, column = 1)
-'''    
+    save = Button(c, text="save", command= addS).grid(row = 7, column = 1)
+    
 def view_student():
     c = Toplevel(root)
     c.title("View Student")
     c.geometry("500x500+510+230")
     Label(c, text="View Student").grid()
+    for Stu in stu_list:
+        data = f"Name: {Stu.getName()} \t" \
+               f"Address: {Stu.getAddress()} \t" \
+               f"Number: {Stu.Student_Num} \t" \
+               f"Subject: {Stu.getSubject()} \t" \
+               f"marks: {Stu.getMarks()} \t" \
+               f""
+        Label(c, text=data).grid()
 
 def delete_student():
     c = Toplevel(root)
     c.title("Delete Student")
     c.geometry("500x500+510+230")
     Label(c, text="Delete Student").grid()
+    valudel=IntVar()
+    Number = Label(c, text = "Enter Number").grid(row = 2,column =3)
+    
+    
+    def destroS():
+        for stu in stu_list:
+            if valudel.get()==stu.Student_Num:
+                stu_list.remove(stu)
+                messagebox.showinfo("messagebox", "the employee  Number is delete ")
+        #messagebox.showinfo("messagebox", "the employee with this Number doesn't exist")
+    de = Entry(c, textvariable= valudel).grid(row = 3, column =3)
+    deletes = Button(c, text="delete", command= destroS).grid(row = 5, column = 1)
+    
+
 
 def exit():
     root.destroy()
