@@ -77,7 +77,7 @@ print(math.pi) #3.141592653589793
 #print (math.tan(180))
 print(math.floor(10.8)) #10
 print(math.ceil(10.8))  #11
-"""
+
 
 #Q4
 
@@ -151,7 +151,7 @@ imagMask=Image.open('maskimg.jpg')
 imagMask.show()
 
 
-
+"""
 
 
 

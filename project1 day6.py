@@ -70,13 +70,13 @@ class Student(person):
         self.Student_Num =int(num)
         super().__init__(name,Add)
         self.__Subject=str(sub) 
-        self.__Marks =dict(marks)    
-    def getSubject( self ):
-        return "Subject : " + self.__Subject
+        self.__Markst : " + self.__Subject
     def setSubject( self,newsub ):
         return "newSubject : " + self.__Subject   
     def getMarks( self ):
-        return "Marks : " , self.__Marks
+        return "Marks : " , self =dict(marks)    
+    def getSubject( self ):
+        return "Subjec.__Marks
     def setMarks( self,newMarks ):
         self.__Marks = newMarks  
     def getAverage( self ):
