@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Python</title>
+    
+       <style>
+body {
+  background-color: linen;
+}
+
+form {
+  border-style: dotted
+}
+</style>
+  </head>
+  <body>
+    <form action="{{url_for('addRecord')}}" method="POST">
+      <h3>Student Information</h3>
+      Name<br />
+      <input type="text" name="name" /><br />
+
+      Address <br />
+      <textarea name="address"></textarea><br />
+
+      City <br />
+      <input type="text" name="city" /><br />
+
+      PIN CODE <br />
+      <input type="text" name="pin" /> <br />
+      <input type="submit" name="submit" /><br />
+    </form>
+  </body>
+</html>
